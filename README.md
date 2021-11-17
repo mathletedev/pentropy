@@ -1,2 +1,3 @@
 # pentropy
-erasing the chaos in note-taking
+
+> erasing the chaos in note-taking
