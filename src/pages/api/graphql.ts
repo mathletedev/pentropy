@@ -1,3 +1,10 @@
-import graphql from "../../server";
+import { PageConfig } from "next";
+import { graphqlServer } from "../../server";
 
-export default graphql;
+export default graphqlServer;
+
+export const config: PageConfig = {
+	api: {
+		bodyParser: false
+	}
+};

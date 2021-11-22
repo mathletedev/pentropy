@@ -1,22 +1,22 @@
 import { ApolloServer } from "apollo-server-micro";
 import cors from "micro-cors";
-import { NextApiRequest, NextApiResponse } from "next";
 import "reflect-metadata";
-import { buildSchema } from "type-graphql";
+import { buildSchemaSync } from "type-graphql";
 import HelloResolver from "./resolvers/hello";
 
-const graphql = async (req: NextApiRequest, res: NextApiResponse) => {
-	const server = new ApolloServer({
-		schema: await buildSchema({ resolvers: [HelloResolver] })
-	});
+const server = new ApolloServer({
+	schema: buildSchemaSync({ resolvers: [HelloResolver] }),
+	introspection: true
+});
 
-	await server.start();
+const startServer = server.start();
 
-	return await cors({ origin: "https://studio.apollographql.com" })(
-		server.createHandler({
-			path: "/api/graphql"
-		})
-	)(req, res);
-};
+export const graphqlServer = cors()(async (req, res) => {
+	if (req.method === "OPTIONS") {
+		res.end();
+		return false;
+	}
 
-export default graphql;
+	await startServer;
+	await server.createHandler({ path: "/api/graphql" })(req, res);
+});
