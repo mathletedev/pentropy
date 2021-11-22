@@ -1,7 +1,7 @@
 import { PageConfig } from "next";
-import { graphqlServer } from "../../server";
+import server from "../../server";
 
-export default graphqlServer;
+export default server;
 
 export const config: PageConfig = {
 	api: {
