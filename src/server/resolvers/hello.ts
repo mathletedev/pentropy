@@ -1,5 +1,5 @@
-import { Session } from "next-auth";
 import { Ctx, Query, Resolver } from "type-graphql";
+import { Context } from "../lib/types";
 
 @Resolver()
 export default class HelloResolver {
@@ -9,7 +9,7 @@ export default class HelloResolver {
 	}
 
 	@Query(() => String)
-	public session(@Ctx() session: Session) {
-		return session.user?.name;
+	public session(@Ctx() { session }: Context) {
+		return JSON.stringify(session);
 	}
 }
