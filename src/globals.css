@@ -12,6 +12,21 @@
 	}
 }
 
+.text-button {
+	@apply py-1;
+	@apply px-3;
+	@apply bg-blue-600;
+	@apply text-gray-50;
+	@apply rounded;
+
+	@apply transition;
+	@apply hover:bg-blue-700;
+
+	@apply dark:bg-blue-500;
+	@apply dark:text-gray-900;
+	@apply dark:hover:bg-blue-400;
+}
+
 .navbar {
 	@apply bg-gray-100;
 	@apply border-gray-200;
