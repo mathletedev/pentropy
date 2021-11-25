@@ -1,10 +1,3 @@
-import { GetStaticProps } from "next";
-import { FC, Fragment } from "react";
+import Path from "../components/navigation/Path";
 
-const _404: FC = () => <Fragment></Fragment>;
-
-export default _404;
-
-export const getStaticProps: GetStaticProps = () => ({
-	redirect: { permanent: false, destination: "/dash" }
-});
+export default Path;

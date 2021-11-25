@@ -36,7 +36,10 @@ const Layout: FC = ({ children }) => {
 			{session ? (
 				<Fragment>
 					<nav className="h-14 flex pr-4 space-x-2 items-center border-b navbar">
-						<button className="h-full w-48 text-center border-r text-xl text-blue-500 transition hover:bg-gray-200 dark:text-blue-400 dark:hover:bg-gray-700 navbar" title="dashboard">
+						<button
+							className="h-full w-48 text-center border-r text-xl text-blue-500 transition hover:bg-gray-200 dark:text-blue-400 dark:hover:bg-gray-700 navbar"
+							title="dashboard"
+						>
 							<Link href="/dash">pentropy</Link>
 						</button>
 						<div>
@@ -57,8 +60,7 @@ const Layout: FC = ({ children }) => {
 							</Link>
 						</button>
 					</nav>
-					<aside className="fixed h-screen w-48 border-r navbar"></aside>
-					<div className="ml-48">{children}</div>
+					{children}
 				</Fragment>
 			) : (
 				children

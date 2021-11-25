@@ -20,6 +20,10 @@
 	}
 }
 
+.main {
+	@apply ml-48;
+}
+
 .text-button {
 	@apply py-1;
 	@apply px-3;
