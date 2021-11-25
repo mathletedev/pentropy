@@ -1,7 +1,5 @@
 import { FC } from "react";
 
-const Dash: FC = ({}) => {
-	return <div>hello world</div>;
-};
+const Dash: FC = () => <div></div>;
 
 export default Dash;
