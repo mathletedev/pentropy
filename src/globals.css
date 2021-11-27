@@ -63,3 +63,27 @@
 	@apply dark:bg-gray-800;
 	@apply dark:border-gray-700;
 }
+
+.sidebar-item {
+	@apply flex;
+	@apply text-gray-500;
+	@apply w-48;
+	@apply py-2;
+	@apply px-4;
+	@apply justify-start;
+	@apply items-center;
+
+	@apply transition;
+	@apply hover:bg-gray-200;
+
+	@apply dark:text-gray-400;
+	@apply dark:hover:bg-gray-700;
+}
+
+.sidebar-item svg {
+	@apply h-5;
+	@apply w-5;
+	@apply text-gray-500;
+
+	@apply dark:text-gray-400;
+}

@@ -1,8 +1,4 @@
-import {
-	CogIcon,
-	DocumentTextIcon,
-	SearchIcon
-} from "@heroicons/react/outline";
+import { CogIcon, PencilAltIcon, SearchIcon } from "@heroicons/react/outline";
 import { useSession } from "next-auth/client";
 import Head from "next/head";
 import Link from "next/link";
@@ -49,9 +45,9 @@ const Layout: FC = ({ children }) => {
 							<input className="h-10 pl-10 text-input" placeholder="search" />
 						</div>
 						<div className="flex-grow"></div>
-						<button title="documents">
+						<button title="journals">
 							<Link href="/docs">
-								<DocumentTextIcon className="icon-button" />
+								<PencilAltIcon className="icon-button" />
 							</Link>
 						</button>
 						<button title="settings">
